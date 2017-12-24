@@ -3,9 +3,11 @@
 Un système de diffusion de message écrit sur de multiples écrans
 
 # Installation
-(A besoin des paquets "git", et "nodejs")
+(A besoin des paquets "git", "nodejs", et "npm")
 ```
-$> sudo apt update && sudo apt install nodejs git && git clone https://github.com/mtribiere/NiceUI.git 
+$> sudo apt update && sudo apt install nodejs git npm && git clone https://github.com/mtribiere/NiceUI.git 
+$> npm install express
+$> npm install socket.io
 ```
 
 # Usage 
