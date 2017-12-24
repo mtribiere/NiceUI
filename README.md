@@ -13,14 +13,14 @@ $> sudo apt update && sudo apt install nodejs git && git clone https://github.co
 ```
 $> nodejs server.js
 ```
-<i>Pour accéder au "Mode visionnage"</i><br>
+<i>Pour accéder au "Mode visionnage" : </i><br>
 Tapez l'adresse ip du serveur dans la barre d'adresse d'un navigateur(port 8080)<br>
 
 ```
 (Exemple) http://192.168.1.101:8080
 ```
 
-<i>Pour accéder au "Mode d'envoi"</i><br>
+<i>Pour accéder au "Mode d'envoi" : </i><br>
 Tapez l'adresse ip du serveur dans la barre d'adresse d'un navigateur avec un /send.html (port 8080)<br>
 
 ```
