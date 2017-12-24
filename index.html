@@ -3,16 +3,27 @@
 <html>
 
     <head>
+	<link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet"> 
 	<style>
 		h1{
 			text-align: center;
+			font-family: 'Patua One', cursive;
 		}
 
-		.Absolute-Center {
-		margin: auto;
-		position: absolute;
-		top: 0; left: 0; bottom: 0; right: 0;
+		.container {
+			height: 100%;
+			width: 100%;
+			display: flex;
+			position: fixed;
+			align-items: center;
+			justify-content: center;
 		}
+		body{
+			width: 120px;
+			height: 1200px;
+			background: linear-gradient(blue,pink) no-repeat center center fixed;
+		}
+
 
 	</style>
         <meta charset="utf-8" />
@@ -22,17 +33,39 @@
     </head>
 
     <body>
-	<div>
-       <h1 id="text1" class="tlt">Connexion en cours...</h1>
-	</div>
-        <script src="/socket.io/socket.io.js"></script>
-
+	<div class="container">
+			<h1 id="text1">Connexion en cours...</h1>
+        </div>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
         <script>
+
+
 		//La connexion au server
         	var socket = io.connect('http://localhost:8080');
 		
-			socket.on("Message",function(message){
+		//Quand on recoit un message
+		socket.on("Message",function(message){
+
+			//Animer la sortie du texte
+			anime({
+				targets: 'div',
+				opacity: 0,
+				scale: 3,
+				duration: 600,
+				easing: "easeInExpo"
+			});
+			//Changer le texte
 			document.getElementById("text1").innerHTML = message;
+
+			//Animer la rentrée du texte
+			anime({
+				targets: 'div',
+				opacity: [0,1],
+				scale: [0.2,1],
+				duration: 800,
+				delay: 1000
+			});
 		});
         </script>
 
