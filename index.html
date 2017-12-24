@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+	<style>
+		h1{
+			text-align: center;
+		}
+
+		.Absolute-Center {
+		margin: auto;
+		position: absolute;
+		top: 0; left: 0; bottom: 0; right: 0;
+		}
+
+	</style>
+        <meta charset="utf-8" />
+
+        <title>NiceUI</title>
+
+    </head>
+
+    <body>
+	<div>
+       <h1 id="text1" class="tlt">Connexion en cours...</h1>
+	</div>
+        <script src="/socket.io/socket.io.js"></script>
+
+        <script>
+		//La connexion au server
+        	var socket = io.connect('http://localhost:8080');
+		
+			socket.on("Message",function(message){
+			document.getElementById("text1").innerHTML = message;
+		});
+        </script>
+
+    </body>
+
+</html>
