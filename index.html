@@ -44,8 +44,7 @@
                                 targets: 'div',
                                 opacity: [0,1],
                                 scale: [0.2,1],
-                                duration: 800,
-                                delay: 1000
+                                duration: 800
                         });	
 		}
 		function animationOut(){
@@ -60,6 +59,7 @@
 	
 
 		function changeText(text){
+			alert("Message recu");
 			document.getElementById("text1").innerHTML = text;
 		}
 
@@ -73,10 +73,12 @@
 			animationOut();
 			
 			//Changer le texte
-			timeoutId = setTimeout('changeText(message)',1000);
+			setTimeout(function(){
+				document.getElementById("text1").innerHTML = message;
+			},800);
 
 			//Animer la rentrée du texte
-			//animationIn();
+			setTimeout(animationIn,1000);
 		});
         </script>
 
