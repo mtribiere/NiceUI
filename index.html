@@ -39,7 +39,29 @@
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
         <script>
+		function animationIn(){
+                        anime({
+                                targets: 'div',
+                                opacity: [0,1],
+                                scale: [0.2,1],
+                                duration: 800,
+                                delay: 1000
+                        });	
+		}
+		function animationOut(){
+			anime({
+                                targets: 'div',
+                                opacity: 0,
+                                scale: 3,
+                                duration: 600,
+                                easing: "easeInExpo"
+			});
+		}
+	
 
+		function changeText(text){
+			document.getElementById("text1").innerHTML = text;
+		}
 
 		//La connexion au server
         	var socket = io.connect('http://localhost:8080');
@@ -48,24 +70,13 @@
 		socket.on("Message",function(message){
 
 			//Animer la sortie du texte
-			anime({
-				targets: 'div',
-				opacity: 0,
-				scale: 3,
-				duration: 600,
-				easing: "easeInExpo"
-			});
+			animationOut();
+			
 			//Changer le texte
-			document.getElementById("text1").innerHTML = message;
+			timeoutId = setTimeout('changeText(message)',1000);
 
 			//Animer la rentrée du texte
-			anime({
-				targets: 'div',
-				opacity: [0,1],
-				scale: [0.2,1],
-				duration: 800,
-				delay: 1000
-			});
+			//animationIn();
 		});
         </script>
 
