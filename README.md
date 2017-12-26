@@ -23,7 +23,7 @@ Tapez l'adresse ip du serveur dans la barre d'adresse d'un navigateur(port 8080)
 ```
 
 <i>Pour accéder au "Mode d'envoi" : </i><br>
-Tapez l'adresse ip du serveur dans la barre d'adresse d'un navigateur avec un /send.html (port 8080)<br>
+Tapez l'adresse ip du serveur dans la barre d'adresse d'un navigateur avec un /send (port 8080)<br>
 
 ```
 (Exemple) http://192.168.1.101:8080/send
