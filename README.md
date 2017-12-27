@@ -10,6 +10,13 @@ $> npm install express
 $> npm install socket.io
 ```
 
+# Configuration
+Changer les addresses 127.0.0.1, en l'adresse IP de votre serveur
+```
+ifconfig
+```
+
+
 # Usage 
 * <i>Pour démarrer le server : </i>
 ```
