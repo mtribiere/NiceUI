@@ -64,7 +64,7 @@
 		}
 
 		//La connexion au server
-        	var socket = io.connect('http://localhost:8080');
+        	var socket = io.connect('http://127.0.0.1:8080');
 		
 		//Quand on recoit un message
 		socket.on("Message",function(message){
